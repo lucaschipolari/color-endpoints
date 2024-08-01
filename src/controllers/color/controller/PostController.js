@@ -1,0 +1,23 @@
+import { InternalServerError } from "../../../helpers/errorConfig/error.js";
+import { Color } from "../../../models/color.js";
+import { StatusCodes } from "http-status-codes";
+export class PostController {
+  static async createColor(req, res, next) {
+    const { body } = req;
+    const newColor = new ColorModel({
+      name: body.name,
+      hex: body.hex,
+    });
+    try {
+      const result = await newColor.save();
+      res.status(StatusCodes.OK).json({
+        data: result,
+        message: "Color created successfully",
+      });
+    } catch (err) {
+      return next(
+        new InternalServerError("An error occurred while saving the color")
+      );
+    }
+  }
+}
