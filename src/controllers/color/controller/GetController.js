@@ -1,5 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import Color from "../../../models/color.js";
+import { InternalServerError } from "../../../helpers/errorConfig/error.js";
 
 export class GetController {
   static async getColor(req, res, next) {
@@ -24,7 +25,7 @@ export class GetController {
         message: "Color retrieved successfully",
       });
     } catch (err) {
-      return next(new ServerError(err.message));
+      return next(new InternalServerError(err.message));
     }
   }
 }

@@ -1,5 +1,5 @@
 import { InternalServerError } from "../../../helpers/errorConfig/error.js";
-import { Color } from "../../../models/color.js";
+import ColorModel from "../../../models/color.js";
 import { StatusCodes } from "http-status-codes";
 export class PostController {
   static async createColor(req, res, next) {

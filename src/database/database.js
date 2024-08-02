@@ -13,3 +13,5 @@ const connectDb = () => {
       console.log("Failed to connect");
     });
 };
+
+export default connectDb;

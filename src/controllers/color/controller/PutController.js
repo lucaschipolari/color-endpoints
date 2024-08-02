@@ -1,4 +1,4 @@
-import color from "../../../models/color";
+import color from "../../../models/color.js";
 
 export class PutController {
   static async putColor(req, res, next) {

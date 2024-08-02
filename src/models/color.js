@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const color = new moongoose.Schema({
+const color = new mongoose.Schema({
   id: mongoose.Schema.Types.ObjectId,
   name: { type: String, required: true },
   hexCode: { type: String, required: true },
