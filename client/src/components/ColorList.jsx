@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import ColorItem from "./ColorItem";
 
 const ColorList = (props) => {
-  const { color, onDelete } = props;
+  const { color, onDelete, onEdit } = props;
   return (
     <div className="d-flex flex-wrap gap-3">
       {color.map((c) => (
-        <ColorItem key={c.id} color={c} onDelete={onDelete} />
+        <ColorItem key={c.id} color={c} onDelete={onDelete} onEdit={onEdit} />
       ))}
     </div>
   );
@@ -21,6 +21,7 @@ ColorList.propTypes = {
     })
   ).isRequired,
   onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };
 
 export default ColorList;

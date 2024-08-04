@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import Button from "../ui/Button";
 
 const ColorItem = (props) => {
-  const { color, onDelete } = props;
+  const { color, onDelete, onEdit } = props;
 
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card">
       <div className="card-body">
         <div
           className="card-img-top"
@@ -26,6 +26,9 @@ const ColorItem = (props) => {
           >
             Delete
           </Button>
+          <Button className="btn btn-primary" onClick={() => onEdit(color)}>
+            Edit
+          </Button>
         </div>
       </div>
     </div>
@@ -39,6 +42,7 @@ ColorItem.propTypes = {
     hexCode: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };
 
 export default ColorItem;

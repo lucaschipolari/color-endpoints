@@ -35,13 +35,13 @@ export const postColorFn = async (color) => {
   return res.json();
 };
 
-export const putColorFn = async (id, color) => {
-  const res = await fetch(`${BACKEND_URL}/color/${id}`, {
+export const putColorFn = async ({ idColor, data }) => {
+  const res = await fetch(`${BACKEND_URL}/color/${idColor}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(color),
+    body: JSON.stringify(data),
   });
   if (!res.ok) {
     throw new Error(`Failed to update color: ${res.message}`);

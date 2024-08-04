@@ -50,8 +50,8 @@ const ColorForm = () => {
 
   useEffect(() => {
     if (colorToEdit) {
-      setValue("color", colorToEdit.color);
-      setColor(colorToEdit.color);
+      setValue("color", colorToEdit.name);
+      setColor(colorToEdit.hexCode);
     }
   }, [colorToEdit, setValue]);
 
@@ -65,9 +65,9 @@ const ColorForm = () => {
     };
 
     if (colorToEdit) {
-      putColor({ idColor: colorToEdit.id, data });
+      console.log(colorToEdit);
+      putColor({ idColor: colorToEdit.id, data: colorData });
     } else {
-      console.log(colorData);
       postColor(colorData);
     }
   };
