@@ -6,7 +6,7 @@ export class PostController {
     const { body } = req;
     const newColor = new ColorModel({
       name: body.name,
-      hex: body.hex,
+      hexCode: body.hexCode,
     });
     try {
       const result = await newColor.save();

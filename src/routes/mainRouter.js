@@ -3,4 +3,4 @@ import { colorPickerRouter } from "./router/colorPickerRouter.js";
 
 export const mainRouter = express.Router();
 
-mainRouter.use("/colorPicker", colorPickerRouter);
+mainRouter.use("/color", colorPickerRouter);

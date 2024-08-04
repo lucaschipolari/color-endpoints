@@ -5,5 +5,6 @@ export const colorPickerRouter = express.Router();
 
 colorPickerRouter.put("/:id", Color.PutController.putColor);
 colorPickerRouter.get("/:id", Color.GetController.getColor);
+colorPickerRouter.get("/", Color.GetController.getAllColors);
 colorPickerRouter.post("/", Color.PostController.createColor);
 colorPickerRouter.delete("/:id", Color.DeleteController.deleteColor);

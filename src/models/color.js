@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 
 const color = new mongoose.Schema({
-  id: mongoose.Schema.Types.ObjectId,
   name: { type: String, required: true },
   hexCode: { type: String, required: true },
-  rgbCode: { type: String, required: true },
-  isActive: { type: Boolean, required: true, default: true },
+  isActive: { type: Boolean, default: true },
 });
 export default mongoose.model("Color", color);

@@ -28,4 +28,20 @@ export class GetController {
       return next(new InternalServerError(err.message));
     }
   }
+  static async getAllColors(req, res, next) {
+    try {
+      const colors = await Color.find({ isActive: true });
+      const colorData = colors.map((color) => ({
+        id: color._id,
+        name: color.name,
+        hexCode: color.hexCode,
+      }));
+      res.status(StatusCodes.OK).json({
+        data: colorData,
+        message: "Colors retrieved successfully",
+      });
+    } catch (err) {
+      return next(new InternalServerError(err.message));
+    }
+  }
 }
